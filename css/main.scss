@@ -1,0 +1,472 @@
+// Variable
+$color-principal : #2196f3;
+$white : #fff;
+$gray : #f8f8f8;
+$font-color: rgb(29, 29, 29);
+$border-radius: 4px;
+$break-small: 320px;
+$break-large: 1200px;
+%fadein {
+    animation: fadeIn;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+// Animation 
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+// CSS
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body, html {
+    font-family: "Montserrat";
+    background: $gray;
+
+    a {
+        text-decoration: none;
+        color: $font-color;
+    }
+}
+
+nav {
+    background:$white;
+    padding: 1em;
+
+    .logo {
+        margin: 0px 25px;
+        font-weight: bold;
+    }
+
+    ul {
+        float: right;
+        display:inline-block;
+        font-size: 13px;
+        li{
+            margin: 0 25px;
+            display:inline-block;
+            list-style-type: none;
+        }
+    }
+}
+
+#banner {
+    padding: 4em 1em;
+    background-image: url("../images/background.jpg"); 
+    background-size: cover;
+
+    h1 {
+        margin: 15px 25px 0px 25px;
+        font-weight: 400;
+    }
+
+    button {
+        padding:10px 15px;
+        border-radius: $border-radius;
+        color: $white;
+        border:none;
+        background: #000;
+        margin: 25px;
+        transition: 0.3s;
+
+        &:hover {
+            background:#000;
+            border:none;
+        }
+    }
+
+}
+
+#game-section {
+    padding: 4em 1em;
+    text-align: center;
+    background-image: url(../images/pattern.svg);
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: calc(100% - (2em + 25px)) 4em;
+
+    h3 {
+        font-size: 14px;
+        font-weight: 400; 
+    }
+
+    .games {
+        text-align: center;
+        padding: 1em;
+        margin:15px 25px;
+        // a{
+        //     img {
+        //         margin: 0px 25px;
+        //         width: 50px;
+        //     }
+        // }
+    }
+}
+
+footer {
+    background: $white;
+    padding: 1em 2em;
+
+    span#copyright {
+        margin:0px 15px;
+        font-weight: 400;
+        font-size: 12px;
+        color: $font-color;
+    }
+
+    span#social{
+        float: right;
+        margin:0px 15px;
+        a{
+            margin:0 0px 0px 25px;
+        }
+        img {
+            width: 25px;
+            height: 25px;
+        }
+
+    }
+}
+.gameModal {
+    @extend %fadein;
+    position: absolute;
+    background:#f2f2f2;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: calc(100vh - 2em);
+    top: 3em;
+    overflow: hidden;
+
+    .close-btn{
+        position: absolute;
+        background: $color-principal;
+        right: calc(2em + 10px);
+        padding: 2px 50px;
+        top: 1em;
+        color: #fff;
+        border-radius: 12px;
+
+    }
+    .gameHeader {
+        background: #040404;
+        padding: 5em calc(2em + 10px);
+        color: #fff;
+    
+        h3 {
+            font-weight: 400;
+        }
+    }
+    .gameContent {
+        min-height: 80vh;
+        box-sizing: border-box;
+        padding: calc(2em + 15px);
+        text-align: center;
+        #restart {
+            padding: 1em 4em;
+            margin-top: 4em;
+            border: none;
+            background: $color-principal;
+            color: #fff;
+            border-radius: 33px;
+            z-index: 9999;
+        }
+        .userInput {
+            display: initial;
+            border: none;
+            background: #fff;
+            font-weight: bold;
+            padding: 1em 6em;
+            margin-top: 8em;
+            text-align: center;
+            border-radius: 33px;
+        }
+        .liveDiv {
+            float: right;
+            width: 100%;
+            margin-bottom: 4em;
+            text-align: right;
+        }
+        .lives {
+            width: 30px;
+            margin: 0px 5px;
+        }
+    }
+    .game0content {
+
+    }
+
+}
+
+.close {
+    display: none;
+}
+
+.fadein {
+    webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+// The games effect
+
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 640px) {
+        flex-flow: column;
+        }
+    
+    h3 {
+        font-size: 14px;
+        font-weight: 400;
+        background: $color-principal;
+        border-radius: 33px;
+        color: #fff;
+        padding: 4px 2px;
+    }
+    .item{
+        @media only screen and (max-width: 640px) {
+            min-width: 100%;
+            width: 100%;
+        }
+      display: grid;
+      margin: auto;
+      position: relative;
+      flex: 1;
+      text-align: center;
+      color: white;
+      border-left: 0px solid $color-principal;
+      transition: .3s;
+      transform:rotate(0deg);
+      max-width: 20%;
+      height: 33vh;
+      min-width: 10%;
+      background-color: rgba(#000, .9);
+  
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;      
+        background-position: center bottom;
+        background-size: cover;
+        z-index: -1;
+      }
+      
+      &:nth-of-type(1){
+          border-left: none;
+        &:before{
+            background-image: url('../images/game0.jpg');
+            opacity: 0.9;
+            border-radius: 10px 0px 0px 10px;
+        }
+      } 
+      &:nth-of-type(2){
+        &:before{
+            background-image: url('../images/game1.jpg');
+            opacity: 0.9;
+        }
+      }  
+      &:nth-of-type(3){
+        &:before{
+            background-image: url('../images/game2.jpg');
+            opacity: 0.9;
+        }
+      }  
+      &:nth-of-type(4){
+        &:before{
+            background-image: url('../images/game3.jpg');
+            opacity: 0.9;
+        }
+      }
+      &:nth-of-type(5){
+        &:before{
+            background-image: url('../images/game4.jpg');
+            opacity: 0.9;
+            border-radius: 0px 10px 10px 0px;
+        }
+      }  
+      &:nth-child(1){
+        border-radius: 10px 0px 0px 10px;
+    }    
+      &:nth-child(5){
+          border-radius: 0px 10px 10px 0px;
+      }
+      
+      
+      &:hover{
+        transition: .5s;
+        max-width: 40% !important;
+        flex-grow: 2;
+        cursor: pointer;
+        color: #fff;
+        background-color:$color-principal;
+        
+        p, a svg{    
+            display: inherit;
+          transform: none;
+          transition: .3s;
+          font-size: 14px;
+          font-weight: 400;
+        }
+        p {
+            @media only screen and (max-width: 640px) {
+                min-height: 30%
+            }
+            min-height: 80%;
+        }
+      }
+    }
+    a{
+        svg {
+            fill: $color-principal;
+            margin: 0px 25px;
+            width: 50px;
+        }
+    }
+    .content{
+      margin: 25px;
+      font-size: 2em;
+    }
+    
+    p, a svg{
+        display:none;
+      transform: translateY(120vh);
+    }
+  }
+  
+
+// Confeti
+$particles: 50;
+$width: 500;
+$height: 500;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+               random($width)-$width / 2 + px
+               random($height)-$height / 1.2 + px
+               hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff
+}
+@mixin keyframes ($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation-delay ($settings) {
+    -moz-animation-delay: $settings;
+    -webkit-animation-delay: $settings;
+    -o-animation-delay: $settings;
+    -ms-animation-delay: $settings;
+    animation-delay: $settings;
+}
+
+@mixin animation-duration ($settings) {
+    -moz-animation-duration: $settings;
+    -webkit-animation-duration: $settings;
+    -o-animation-duration: $settings;
+    -ms-animation-duration: $settings;
+    animation-duration: $settings;
+}
+
+@mixin animation ($settings) {
+    -moz-animation: $settings;
+    -webkit-animation: $settings;
+    -o-animation: $settings;
+    -ms-animation: $settings;
+    animation: $settings;
+}
+
+@mixin transform ($settings) {
+    transform: $settings;
+    -moz-transform: $settings;
+    -webkit-transform: $settings;
+    -o-transform: $settings;
+    -ms-transform: $settings;
+}
+
+.start > .before, .start > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+}
+    
+.start > .after {
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+        
+@include keyframes(bang) {
+  to {
+    box-shadow:$box-shadow;
+  }
+}
+    
+@include keyframes(gravity)  {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+    
+@include keyframes(position) {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%, 59.9% {  
+    margin-top: 20%;
+    margin-left: 70%
+  }
+  60%, 79.9% {  
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%, 99.9% {  
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
