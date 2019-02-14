@@ -1,4 +1,6 @@
-# **Gametoon** 
+<center><h1>Gametoon</h1> </center>
+<img src="https://i.imgur.com/fHCTlOj.jpg"></img>
+
 Gametoon will include:
  - [x] Guess the number
  - [ ] Guess the word
