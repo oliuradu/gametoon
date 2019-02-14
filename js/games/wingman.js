@@ -1,4 +1,5 @@
 export function openGame1(){
+    console.log("testing git");
     // Hide the background
     document.querySelector("#game-section").style.display = "none";
     // Show the div
