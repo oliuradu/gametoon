@@ -15,7 +15,7 @@ export function openGame1(){
     // Lives 
     var lives_dom = document.getElementById("game1lives");
     // Variables
-    var wordlist = ["Genial","Floor","Zombie","Computer","Javascript","Typescript","React"];
+    var wordlist = ["Javascript","PHP","Typescript","Variable", "Array","Function","Object","Document","Loop","NodeJs","React","Angular"];
     var random_word = wordlist[Math.floor(Math.random() * wordlist.length)];
     var random_word_split = random_word.toLowerCase().split("");
     var array_to_guess = [];
