@@ -1,8 +1,10 @@
 export function openGame1(){
     // Hide the background
-    document.querySelector("#game-section").style.display = "none";
-    // Show the div
-    document.querySelector("#game1modal").classList.remove("close");
+    var game_section_dom = document.querySelector("#game-section")
+    game_section_dom.style.display = "none";
+    // Show the modal (overlay modal with the game)
+    var game_modal_dom = document.querySelector("#game1modal")
+    game_modal_dom.classList.remove("close");
     // Make the close button
     var textOutput = document.querySelector("#game1text");
     document.querySelector("#game1Close").addEventListener("click", closeGame);
@@ -13,21 +15,26 @@ export function openGame1(){
     // Lives 
     var lives_dom = document.getElementById("game1lives");
     // Variables
-    var wordlist = ["Radu", "Maria", "Elementar", "Zerererereat"];
-    var random_word = "Elementar";
-    textOutput.innerHTML = "Guess the secret word";
+    var wordlist = ["Genial","Floor","Zombie","Computer","Javascript","Typescript","React"];
+    var random_word = wordlist[Math.floor(Math.random() * wordlist.length)];
+    var random_word_split = random_word.toLowerCase().split("");
+    var array_to_guess = [];
     var lives = 7;
+    // Add an _ into array_to_guest for each letter
+    random_word_split.forEach( letter_from_word => {
+        array_to_guess.push("_");
+    });
+    textOutput.innerHTML = `Guess the secret word <br><br> ${array_to_guess.join(" ")}`;
     checkLives();
 
     function verify(e){
-        
             var keyCode = e.keyCode;
             if (keyCode == 13 && lives > 0 && userInput.value != "") {
-                
-                
+                checkLetter(userInput.value.toLowerCase());
+                textOutput.innerHTML = `Guess the secret word <br><br> ${array_to_guess.join(" ")}`;
                 ///// IF WINNNEEEER 
-                if(false) {
-                    textOutput.innerHTML = "You won! The number was " + userInput.value;
+                if(array_to_guess.indexOf("_") == -1) {
+                    textOutput.innerHTML = "You won! The word was " + random_word;
                     // Add button
                     document.querySelector(".confetiGame1").classList.add("start");
                     createRestartButton();
@@ -35,6 +42,19 @@ export function openGame1(){
             checkLives();
             userInput.value = "";
             
+        }
+    }
+
+    function checkLetter(userInput_letter){
+        if(random_word_split.indexOf(userInput_letter) == -1 &&  userInput_letter != ""){
+            lives--;
+        }
+        else{
+            for (let i = 0; i < random_word_split.length; i++) {       
+                if(random_word_split[i] == userInput_letter){
+                    array_to_guess[i] = userInput_letter;
+                }
+            }
         }
     }
     // Check lives 
@@ -46,7 +66,7 @@ export function openGame1(){
     }
     function checkLives() {
         if(lives == 0){
-            textOutput.innerHTML = "You lost! The number was " + randomNumber;
+            textOutput.innerHTML = "You lost! The word was " + random_word;
             createRestartButton();
 
         }
@@ -58,8 +78,8 @@ export function openGame1(){
     }
     // Close game
     function closeGame(){
-        document.querySelector("#game1modal").classList.add("close");
-        document.querySelector("#game-section").style.display = "block";
+        game_modal_dom.classList.add("close");
+        game_section_dom.style.display = "block";
     }
 
     // Restart game
