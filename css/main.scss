@@ -149,7 +149,10 @@ footer {
     top: 3em;
     overflow: hidden;
     
-
+    #game2score{
+        float: left;
+        font-weight: bold;
+    }
     progress {
         width: 100%;
         height: 14px;

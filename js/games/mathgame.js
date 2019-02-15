@@ -1,6 +1,5 @@
 export function openGame2(){
     // Hide the background
-    console.log("hola");
     document.querySelector("#game-section").style.display = "none";
     // Show the div
     document.querySelector("#game2modal").classList.remove("close");
@@ -11,9 +10,10 @@ export function openGame2(){
     var userInput = document.querySelector("#game2userInput");
                     userInput.addEventListener("keypress", verify);
                     userInput.style.display = "initial";
-    // Lives 
+/////////////////////////////////////////////////////////////////////////////////
     var lives_dom = document.getElementById("game2lives");
-    // Variables
+    var score_dom = document.getElementById("game2score");
+
     textOutput.innerHTML = "1 + 1";
     var number1,number2,number3,number4,mathsymbol,answer;
     var lives = 7;
@@ -43,18 +43,26 @@ export function openGame2(){
                 if(userInput.value == 2 && gameStarted == false){
                      gameStarted = true;
                      generateMathProblem();
+                     lives++;
                  }
                  if(Number(userInput.value) == answer){
+                     score += (timeLeft / 10); 
                      timeLeft = 100;
+                     score_dom.innerHTML = "Score: " + score;
                      generateMathProblem();
+
+                 }
+                 else {
+                     lives--;
                  }
 
                  if(userInput )
                 ///// IF WINNNEEEER 
-                if(false) {
-                    textOutput.innerHTML = "You won! The number was " + userInput.value;
+                if(score > 600) {
+                    textOutput.innerHTML = "You won! You are pretty clever";
                     // Add button
                     document.querySelector(".confetiGame2").classList.add("start");
+                    clearInterval(timeInterval);
                     createRestartButton();
                 }
             checkLives();
@@ -63,12 +71,51 @@ export function openGame2(){
         }
     }
     function generateMathProblem(){
-        if(score < 100){
+        if(score < 50){
             mathsymbol = "+"
             number1 = Math.floor(Math.random() * 10);
             number2 = Math.floor(Math.random() * 10);
             answer = number1 + number2;
             textOutput.innerHTML = `${number1} ${mathsymbol} ${number2}`;
+        }
+        else if(score < 100){
+            mathsymbol = "+"
+            number1 = Math.floor(Math.random() * 10);
+            number2 = Math.floor(Math.random() * 10);
+            number3 = Math.floor(Math.random() * 10);
+            number1 = Number(`${number1}${number2}`);
+            answer = number1 + number3;
+            textOutput.innerHTML = `${number1} ${mathsymbol} ${number3}`;
+        }
+        else if(score < 200){
+            mathsymbol = "*"
+            number1 = Math.floor(Math.random() * 10);
+            number2 = Math.floor(Math.random() * 10);
+            number3 = Math.floor(Math.random() * 10);
+            answer = number1 * number3;
+            textOutput.innerHTML = `${number1} ${mathsymbol} ${number3}`;
+        }
+        else if(score < 300){
+            mathsymbol = "+"
+            number1 = Math.floor(Math.random() * 10);
+            number2 = Math.floor(Math.random() * 10);
+            number3 = Math.floor(Math.random() * 10);
+            number4 = Math.floor(Math.random() * 10);
+            number1 = Number(`${number1}${number2}`);
+            number3 = Number(`${number3}${number4}`);
+            answer = number1 + number3;
+            textOutput.innerHTML = `${number1} ${mathsymbol} ${number3}`;
+        }
+        else if(score < 500){
+            mathsymbol = "*"
+            number1 = Math.floor(Math.random() * 10);
+            number2 = Math.floor(Math.random() * 10);
+            number3 = Math.floor(Math.random() * 10);
+            number4 = Math.floor(Math.random() * 10);
+            number1 = Number(`${number1}${number2}`);
+            number3 = Number(`${number3}${number4}`);
+            answer = number1 * number3;
+            textOutput.innerHTML = `${number1} ${mathsymbol} ${number3}`;
         }
     }
     function createRestartButton(){
@@ -80,7 +127,7 @@ export function openGame2(){
     // Check lives 
     function checkLives() {
         if(lives == 0){
-            textOutput.innerHTML = "You lost! The number was ";
+            textOutput.innerHTML = "You lost! The answer was " + answer;
             createRestartButton();
 
         }
