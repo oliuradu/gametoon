@@ -3,7 +3,7 @@
 
 Gametoon will include:
  - [x] Guess the number
- - [ ] Guess the word
+ - [x] Guess the word
  - [ ] Math game
  - [ ] Snake game
  - [ ] Trivia game
