@@ -58,7 +58,7 @@ export function openGame2(){
 
                  if(userInput )
                 ///// IF WINNNEEEER 
-                if(score > 600) {
+                if(score > 100) {
                     textOutput.innerHTML = "You won! You are pretty clever";
                     // Add button
                     document.querySelector(".confetiGame2").classList.add("start");

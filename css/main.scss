@@ -214,6 +214,18 @@ footer {
         box-sizing: border-box;
         padding: calc(2em + 15px);
         text-align: center;
+        .buttonvariante {
+            color:#fff;
+            margin-top: 2em;
+            padding: 1em 2em;
+            border-radius: 33px;
+            background:$color-principal;
+            transition: 0.3s;
+            border:none;
+            &:hover {
+                background:#1c7dca;
+            }
+        }
         #restart {
             padding: 1em 4em;
             margin-top: 4em;
