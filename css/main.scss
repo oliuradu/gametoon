@@ -214,9 +214,16 @@ footer {
         box-sizing: border-box;
         padding: calc(2em + 15px);
         text-align: center;
+        
+        canvas {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 3px;
+            border-radius: 8px;
+        }
         .buttonvariante {
             color:#fff;
-            margin-top: 2em;
+            margin-top: 10em;
             padding: 1em 2em;
             border-radius: 33px;
             background:$color-principal;
@@ -302,7 +309,7 @@ footer {
       flex: 1;
       text-align: center;
       color: white;
-      border-left: 0px solid $color-principal;
+      border-left: 2px solid #f8f8f8;
       transition: .3s;
       transform:rotate(0deg);
       max-width: 20%;

@@ -1,251 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="./js/svginject.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,700" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="./favicon.ico"/>
-    <link rel="stylesheet" href="css/main.css">
-    <title>Games</title>
-</head>
-<body>
-
-    <nav>
-        <a href="#" class="logo">Gametoon</a>
-        <ul>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <script src="./js/svginject.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,700" rel="stylesheet">
+      <link rel="shortcut icon" type="image/png" href="./favicon.ico"/>
+      <link rel="stylesheet" href="css/main.css">
+      <title>Games</title>
+   </head>
+   <body>
+      <nav>
+         <a href="#" class="logo">Gametoon</a>
+         <ul>
             <li>
-                <a href="#">Home</a>
+               <a href="#">Home</a>
             </li>
             <li>
-                <a href="#">Games</a>
+               <a href="#">Games</a>
             </li>
-        </ul>
-    </nav>
-
-    <section id="banner">
-        <div>
-                <h1>Welcome to <b>Gametoon.</b><br>
-                    Pure <b>javascript</b> games.
-                </h1>
-
-                <button>Like us on facebook</button>
-        </div>
-
-    </section>
-
-
-    <section id="game-section">
-        <div>
+         </ul>
+      </nav>
+      <section id="banner">
+         <div>
+            <h1>Welcome to <b>Gametoon.</b><br>
+               Pure <b>javascript</b> games.
+            </h1>
+            <button>Like us on facebook</button>
+         </div>
+      </section>
+      <section id="game-section">
+         <div>
             <h1>Check our games</h1>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
-
             <div class="games">
-
-                    <div class="container">
-                            <div class="item">
-                                <div class="content">
-                                    <h3>Guess the number</h3>
-                                    <p></p>
-                                    
-                                    <a id="game0" href="#"><img src="./images/playbutton.svg" onload="SVGInject(this)" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="content">
-                                    <h3>Guess the word</h3>
-                                    <p></p>
-                                    
-                                    <a id="game1" href="#"><img src="./images/playbutton.svg" onload="SVGInject(this)" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="content">
-                                    <h3>Let's do math</h3>
-                                    <p></p>
-                                    <a id="game2" href="#"><img src="./images/playbutton.svg" onload="SVGInject(this)" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="content">
-                                    <h3>Answer it</h3>
-                                    <p></p>
-                                    <a id="game3" href="#"><img src="./images/playbutton.svg" onload="SVGInject(this)" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="content">
-                                    <h3>Snake</h3>
-                                    <p></p>
-                                    <a id="game4" href="#"><img src="./images/playbutton.svg" onload="SVGInject(this)" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-
+               <div class="container">
+                  <div class="item">
+                     <div class="content">
+                        <h3>Guess the number</h3>
+                        <p></p>
+                        <a id="game0" href="#"><img src="./images/playbutton.svg" onload="SVGInject(this)" alt=""></a>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="content">
+                        <h3>Guess the word</h3>
+                        <p></p>
+                        <a id="game1" href="#"><img src="./images/playbutton.svg" onload="SVGInject(this)" alt=""></a>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="content">
+                        <h3>Let's do math</h3>
+                        <p></p>
+                        <a id="game2" href="#"><img src="./images/playbutton.svg" onload="SVGInject(this)" alt=""></a>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="content">
+                        <h3>Answer it</h3>
+                        <p></p>
+                        <a id="game3" href="#"><img src="./images/playbutton.svg" onload="SVGInject(this)" alt=""></a>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="content">
+                        <h3>Snake</h3>
+                        <p></p>
+                        <a id="game4" href="#"><img src="./images/playbutton.svg" onload="SVGInject(this)" alt=""></a>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    
-    </section>
-    <!-- Guess the number-->
-    <section id="game0modal" class="modal close gameModal">
-        <a id="game0Close" class="close-btn" href="">Close</a>
-        <div class="gameHeader">
-                <h1>Choice the number</h1>
-                <h3>You have 7 lives to try to guess the random number.</h3>
-        </div>
-
-        <div class="gameContent game0content"> 
-            
-                <div class="wrapper">
-                        <div class="confetiGame0">
-                                <div class="before"></div>
-                                <div id="game0lives" class="liveDiv"></div>
-                                <h2 id="game0text">Guess the number</h2>
-                                <input type="number" class="userInput" id="game0userInput">
-                                <div class="after"></div>
-                        </div>
-
-                </div>
-
-        </div>
-
-        <footer>
-                <span id="copyright">Page made by Mix Radu</span>
-                <span id="social">
-                    <a href="https://www.facebook.com/oliu.radutudor">
-                        <img src="images/facebook.svg" alt="facebook logo">
-                    </a>
-                    <a href="https://www.facebook.com/oliu.radutudor">
-                        <img src="images/instagram.svg" alt="instagram logo">
-                    </a>
-        
-                </span>
-            </footer>
-    </section>
-
- <!-- Guess the word-->
- <section id="game1modal" class="modal close gameModal">
-    <a id="game1Close" class="close-btn" href="">Close</a>
-    <div class="gameHeader">
+         </div>
+      </section>
+      <!-- Guess the number-->
+      <section id="game0modal" class="modal close gameModal">
+         <a id="game0Close" class="close-btn" href="">Close</a>
+         <div class="gameHeader">
+            <h1>Choice the number</h1>
+            <h3>You have 7 lives to try to guess the random number.</h3>
+         </div>
+         <div class="gameContent game0content">
+            <div class="wrapper">
+               <div class="confetiGame0">
+                  <div class="before"></div>
+                  <div id="game0lives" class="liveDiv"></div>
+                  <h2 id="game0text">Guess the number</h2>
+                  <input type="number" class="userInput" id="game0userInput">
+                  <div class="after"></div>
+               </div>
+            </div>
+         </div>
+         <footer>
+            <span id="copyright">Page made by Mix Radu</span>
+            <span id="social">
+            <a href="https://www.facebook.com/oliu.radutudor">
+            <img src="images/facebook.svg" alt="facebook logo">
+            </a>
+            <a href="https://www.facebook.com/oliu.radutudor">
+            <img src="images/instagram.svg" alt="instagram logo">
+            </a>
+            </span>
+         </footer>
+      </section>
+      <!-- Guess the word-->
+      <section id="game1modal" class="modal close gameModal">
+         <a id="game1Close" class="close-btn" href="">Close</a>
+         <div class="gameHeader">
             <h1>Guess the word</h1>
             <h3>You have 7 lives to try to guess the random word.</h3>
-    </div>
-
-    <div class="gameContent game1content"> 
-        
+         </div>
+         <div class="gameContent game1content">
             <div class="wrapper">
-                    <div class="confetiGame1">
-                            <div class="before"></div>
-                            <div id="game1lives" class="liveDiv"></div>
-                            <h2 id="game1text">Guess the word</h2>
-                            <input type="text" pattern="[a-zA-Z]+" class="userInput" id="game1userInput">
-                            <div class="after"></div>
-                    </div>
-
+               <div class="confetiGame1">
+                  <div class="before"></div>
+                  <div id="game1lives" class="liveDiv"></div>
+                  <h2 id="game1text">Guess the word</h2>
+                  <input type="text" pattern="[a-zA-Z]+" class="userInput" id="game1userInput">
+                  <div class="after"></div>
+               </div>
             </div>
-
-    </div>
-
-    <footer>
+         </div>
+         <footer>
             <span id="copyright">Page made by Mix Radu</span>
             <span id="social">
-                <a href="https://www.facebook.com/oliu.radutudor">
-                    <img src="images/facebook.svg" alt="facebook logo">
-                </a>
-                <a href="https://www.facebook.com/oliu.radutudor">
-                    <img src="images/instagram.svg" alt="instagram logo">
-                </a>
-    
-            </span>
-        </footer>
-</section>
-<!-- Math game -->
-<section id="game2modal" class="modal close gameModal">
-    <a id="game2Close" class="close-btn" href="">Close</a>
-    <div class="gameHeader">
-            <h1>Let's play some math</h1>
-            <h3>How far can you go?</h3>
-    </div>
-    <div id="game2timeDiv"><progress id="game2time" value="100" max="100"></progress></div>
-    <div class="gameContent game2content"> 
-        
-            <div class="wrapper">
-                    <div class="confetiGame2">
-                            <div class="before"></div>
-                            <div  class="liveDiv"><span id="game2score">Score: 0</span><div id="game2lives"></div></div> 
-                            <h2 id="game2text">1 + 1</h2>
-                            <input type="number" class="userInput" id="game2userInput">
-                            <div class="after"></div>
-                    </div>
-
-            </div>
-
-    </div>
-
-    <footer>
-            <span id="copyright">Page made by Mix Radu</span>
-            <span id="social">
-                <a href="https://www.facebook.com/oliu.radutudor">
-                    <img src="images/facebook.svg" alt="facebook logo">
-                </a>
-                <a href="https://www.facebook.com/oliu.radutudor">
-                    <img src="images/instagram.svg" alt="instagram logo">
-                </a>
-    
-            </span>
-        </footer>
-</section>
-<!-- Answer it-->
-<section id="game3modal" class="modal close gameModal">
-    <a id="game3Close" class="close-btn" href="">Close</a>
-    <div class="gameHeader">
-            <h1>Let's play some math</h1>
-            <h3>How far can you go?</h3>
-    </div>
-    <div id="game3timeDiv"><progress id="game3time" value="100" max="100"></progress></div>
-    <div class="gameContent game3content"> 
-        
-            <div class="wrapper">
-                    <div class="confetiGame3">
-                            <div class="before"></div>
-                            <div  class="liveDiv"><span id="game3score">Score: 0</span><div id="game3lives"></div></div> 
-                            <h2 id="game3text">1 + 1</h2>
-                            <div id="game3variante"></div>
-                            <div class="after"></div>
-                    </div>
-
-            </div>
-
-    </div>
-
-    <footer>
-            <span id="copyright">Page made by Mix Radu</span>
-            <span id="social">
-                <a href="https://www.facebook.com/oliu.radutudor">
-                    <img src="images/facebook.svg" alt="facebook logo">
-                </a>
-                <a href="https://www.facebook.com/oliu.radutudor">
-                    <img src="images/instagram.svg" alt="instagram logo">
-                </a>
-    
-            </span>
-        </footer>
-</section>
-
-    <footer>
-        <span id="copyright">Page made by Mix Radu</span>
-        <span id="social">
             <a href="https://www.facebook.com/oliu.radutudor">
-                <img src="images/facebook.svg" alt="facebook logo">
+            <img src="images/facebook.svg" alt="facebook logo">
             </a>
             <a href="https://www.facebook.com/oliu.radutudor">
-                <img src="images/instagram.svg" alt="instagram logo">
+            <img src="images/instagram.svg" alt="instagram logo">
             </a>
-
-        </span>
-    </footer>
-   <script src="./js/app.js" type="module"></script>
-
-</body>
+            </span>
+         </footer>
+      </section>
+      <!-- Math game -->
+      <section id="game2modal" class="modal close gameModal">
+         <a id="game2Close" class="close-btn" href="">Close</a>
+         <div class="gameHeader">
+            <h1>Let's play some math</h1>
+            <h3>How far can you go?</h3>
+         </div>
+         <div id="game2timeDiv"><progress id="game2time" value="100" max="100"></progress></div>
+         <div class="gameContent game2content">
+            <div class="wrapper">
+               <div class="confetiGame2">
+                  <div class="before"></div>
+                  <div  class="liveDiv">
+                     <span id="game2score">Score: 0</span>
+                     <div id="game2lives"></div>
+                  </div>
+                  <h2 id="game2text">1 + 1</h2>
+                  <input type="number" class="userInput" id="game2userInput">
+                  <div class="after"></div>
+               </div>
+            </div>
+         </div>
+         <footer>
+            <span id="copyright">Page made by Mix Radu</span>
+            <span id="social">
+            <a href="https://www.facebook.com/oliu.radutudor">
+            <img src="images/facebook.svg" alt="facebook logo">
+            </a>
+            <a href="https://www.facebook.com/oliu.radutudor">
+            <img src="images/instagram.svg" alt="instagram logo">
+            </a>
+            </span>
+         </footer>
+      </section>
+      <!-- Answer it-->
+      <section id="game3modal" class="modal close gameModal">
+         <a id="game3Close" class="close-btn" href="">Close</a>
+         <div class="gameHeader">
+            <h1>Let's play some math</h1>
+            <h3>How far can you go?</h3>
+         </div>
+         <div id="game3timeDiv"><progress id="game3time" value="100" max="100"></progress></div>
+         <div class="gameContent game3content">
+            <div class="wrapper">
+               <div class="confetiGame3">
+                  <div class="before"></div>
+                  <div  class="liveDiv">
+                     <span id="game3score">Score: 0</span>
+                     <div id="game3lives"></div>
+                  </div>
+                  <h2 id="game3text">1 + 1</h2>
+                  <div id="game3variante"></div>
+                  <div class="after"></div>
+               </div>
+            </div>
+         </div>
+         <footer>
+            <span id="copyright">Page made by Mix Radu</span>
+            <span id="social">
+            <a href="https://www.facebook.com/oliu.radutudor">
+            <img src="images/facebook.svg" alt="facebook logo">
+            </a>
+            <a href="https://www.facebook.com/oliu.radutudor">
+            <img src="images/instagram.svg" alt="instagram logo">
+            </a>
+            </span>
+         </footer>
+      </section>
+      <!-- Snake game-->
+      <section id="game4modal" class="modal close gameModal">
+         <a id="game4Close" class="close-btn" href="">Close</a>
+         <div class="gameHeader">
+            <h1>Ssssssnaaake</h1>
+            <h3>How bigger can you get?</h3>
+         </div>
+         <div class="gameContent game4content">
+            <div class="wrapper">
+               <div class="confetiGame4">
+                  <div class="before"></div>
+                  <div  class="liveDiv">
+                     <span id="game4score">Score: 0</span>
+                     <div id="game4lives"></div>
+                  </div>
+                  <h2 id="game4text">Snake</h2>
+                  <canvas width="400" height="400" id="game"></canvas>
+                  <div class="after"></div>
+               </div>
+            </div>
+         </div>
+         <footer>
+            <span id="copyright">Page made by Mix Radu</span>
+            <span id="social">
+            <a href="https://www.facebook.com/oliu.radutudor">
+            <img src="images/facebook.svg" alt="facebook logo">
+            </a>
+            <a href="https://www.facebook.com/oliu.radutudor">
+            <img src="images/instagram.svg" alt="instagram logo">
+            </a>
+            </span>
+         </footer>
+      </section>
+      <footer>
+         <span id="copyright">Page made by Mix Radu</span>
+         <span id="social">
+         <a href="https://www.facebook.com/oliu.radutudor">
+         <img src="images/facebook.svg" alt="facebook logo">
+         </a>
+         <a href="https://www.facebook.com/oliu.radutudor">
+         <img src="images/instagram.svg" alt="instagram logo">
+         </a>
+         </span>
+      </footer>
+      <script src="./js/app.js" type="module"></script>
+   </body>
 </html>

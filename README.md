@@ -4,7 +4,7 @@
 Gametoon will include:
  - [x] Guess the number
  - [x] Guess the word
- - [ ] Math game
+ - [x] Math game
  - [ ] Snake game
  - [ ] Trivia game
 ____
